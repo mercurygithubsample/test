@@ -1,0 +1,17 @@
+.tasks {
+    max-height: 19em;
+    overflow-y: scroll;
+    border: 3px solid #ccc;
+    list-style: none;
+    padding: 0;
+}
+
+.tasks .task {
+    padding: 0.5em;
+    border: 1px solid #007aff;
+}
+
+.tasks .task .time {
+    color: #8f8f8f;
+    font-size: 0.7em;
+}

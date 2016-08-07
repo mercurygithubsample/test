@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Multiple modules bootstrap</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script>
+//module1
+var app1 = angular.module("module1", []);
+app1.controller("Controller1", function ($scope) {
+	$scope.name = "Jason";
+});
+//module2
+var app2 = angular.module("module2", []);
+app2.controller("Controller2", function ($scope) {
+	$scope.name = "Tom";
+});
+//module3 dependent on module1 & module2
+angular.module("app", ["module1", "module2"]);
+</script>
+</head>
+<body>
+	<!--angularjs auto bootstrap process-->
+	<div ng-app="app">
+		<h1>Multiple modules bootstrap</h1>
+		<div ng-controller="Controller2">
+			{{name}}
+		</div>
+		<div ng-controller="Controller1">
+			{{name}}
+		</div>
+	</div>
+</body>
+</html>
